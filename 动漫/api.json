@@ -1,4 +1,4 @@
-{"spider":"https://jihulab.com/Pizazz/tvbox/-/raw/main/spider.jar;md5;c172038c72b7a7d16f3682aa19f52260",
+{"spider":"https://jihulab.com/Pizazz/tvbox/-/raw/main/spider.jar;md5;e3664e6c9b3fc8be8342ece0ab16acb9",
 "wallpaper":"https://api.likepoems.com/img/bing",
 "sites":
 	[{"key":"AnFuns","name":"AnFuns","type":3,"api":"./JS/drpy.min.js","ext":"./JS/AnFuns.js"},
@@ -13,6 +13,7 @@
 	{"key":"爱弹幕","name":"爱弹幕","type":3,"api":"./JS/drpy.min.js","ext":"./JS/爱弹幕.js"},
 	{"key":"异世界","name":"异世界","type":3,"api":"./JS/drpy.min.js","ext":"./JS/异世界.js"},
 	{"key":"喵次元","name":"喵次元","type":3,"api":"./JS/drpy.min.js","ext":"./JS/喵次元.js"},
+	{"key":"稀饭动漫","name":"稀饭动漫","type":3,"api":"csp_Xifan","searchable":1,"quickSearch":1,"filterable":0},
 	{"key":"曲奇动漫","name":"曲奇动漫","type":3,"api":"./JS/drpy.min.js","ext":"./JS/曲奇动漫.js"},
 	{"key":"妮可动漫","name":"妮可动漫","type":3,"api":"./JS/drpy.min.js","ext":"./JS/妮可动漫.js"},
 	{"key":"奇米动漫","name":"奇米动漫","type":3,"api":"./JS/drpy.min.js","ext":"./JS/奇米动漫.js"},
