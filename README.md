@@ -2,7 +2,7 @@
 
 在线源订阅地址：
 
-https://mirror.ghproxy.com/raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/warehouse.txt
+https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/warehouse.txt
 
 此资源需软件支持多仓
 
@@ -15,3 +15,9 @@ https://mirror.ghproxy.com/raw.githubusercontent.com/PizazzGY/TVBox_warehouse/ma
 # TVBox系列软件
 
 https://www.123pan.com/s/sPNbVv-aYuXv
+
+# 如果提示接口无效，请在在软件设置里修改DNS。
+
+# 感谢关注
+
+![本人抖音](https://github.com/PizazzGY/TVBox_warehouse/assets/78096245/606c5ee7-5d1d-4bc6-9daf-de56c568f4ed)
