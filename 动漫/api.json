@@ -1,5 +1,5 @@
 {
-    "spider": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;dfa413850c16ddd79d05c62f23cbd35e",
+    "spider": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;7ddc08e410d76ceb8af9209e828a46f4",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
@@ -116,6 +116,13 @@
             "ext": "./JS/怡萱动漫.js"
         },
         {
+            "key": "花子动漫",
+            "name": "花子动漫",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "ext": "./JS/花子动漫.js"
+        },
+        {
             "key": "稀饭动漫",
             "name": "稀饭动漫",
             "type": 3,
@@ -131,17 +138,7 @@
             "searchable": 1,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://www.mutefun.tv"
-        },
-        {
-            "key": "维奇动漫",
-            "name": "维奇动漫",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 0,
-            "ext": "./XBPQ/维奇动漫.json"
+            "ext": "https://www.mutean.com"
         },
         {
             "key": "动漫巴士",
