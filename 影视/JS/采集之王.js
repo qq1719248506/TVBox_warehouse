@@ -4,7 +4,8 @@ globalThis.getRandomItem = function (items) {
 var rule = {
     title: '采集之王[合]',
     author: '道长',
-    version: '20240624 beta8',
+    version: '20240705 beta16',
+    update_info: ``.trim(),
     host: '',
     homeTid: '',
     homeUrl: '/api.php/provide/vod/?ac=detail&t={{rule.homeTid}}',
@@ -24,6 +25,8 @@ var rule = {
     filterable: 1,
     play_parse: true,
     parse_url: '',
+    search_match: false,
+    search_pic: true,
     预处理: $js.toString(() => {
         function getClasses(item) {
             let classes = [];
@@ -53,7 +56,16 @@ var rule = {
             log('当前程序支持批量请求[batchFetch],搜索限制已设置为16');
         }
         let _url = rule.params;
+        log(`传入参数:${_url}`);
         if (_url && typeof(_url) === 'string' && /^(http|file)/.test(_url)) {
+            if (_url.includes('$')) {
+                let _url_params = _url.split('$');
+                _url = _url_params[0];
+                rule.search_match = !!(_url_params[1]);
+                if (_url_params.length > 2) {
+                    rule.search_pic = !!(_url_params[2]);
+                }
+            }
             let html = request(_url);
             let json = JSON.parse(html);
             let _classes = [];
@@ -64,6 +76,7 @@ var rule = {
                     type_name: it.name,
                     type_id: it.url,
                     parse_url: it.parse_url || '',
+                    searchable: it.searchable !== 0,
                     api: it.api || '',
                     cate_exclude: it.cate_exclude || '',
                 };
@@ -160,7 +173,7 @@ var rule = {
                 vod_pic: 'https://resource-cdn.tuxiaobei.com/video/FtWhs2mewX_7nEuE51_k6zvg6awl.png',
                 vod_remarks: `版本:${rule.version}`,
                 vod_play_from: '道长在线',
-                vod_play_url: '嗅探播放$https://resource-cdn.tuxiaobei.com/video/10/8f/108fc9d1ac3f69d29a738cdc097c9018.mp4'
+                vod_play_url: '随机小视频$http://api.yujn.cn/api/zzxjj.php',
             };
         } else {
             if (rule.classes) {
@@ -182,9 +195,10 @@ var rule = {
     搜索: $js.toString(() => {
         VODS = [];
         if (rule.classes) {
+            let canSearch = rule.classes.filter(it => it.searchable);
             let page = Number(MY_PAGE);
-            page = (MY_PAGE - 1) % Math.ceil(rule.classes.length / rule.search_limit) + 1;
-            let truePage = Math.ceil(MY_PAGE / Math.ceil(rule.classes.length / rule.search_limit));
+            page = (MY_PAGE - 1) % Math.ceil(canSearch.length / rule.search_limit) + 1;
+            let truePage = Math.ceil(MY_PAGE / Math.ceil(canSearch.length / rule.search_limit));
             if (rule.search_limit) {
                 let start = (page - 1) * rule.search_limit;
                 let end = page * rule.search_limit;
@@ -193,8 +207,9 @@ var rule = {
                 log('start:' + start);
                 log('end:' + end);
                 log('搜索模式:' + searchMode);
-                if (start < rule.classes.length) {
-                    let search_classes = rule.classes.slice(start, end);
+                log('精准搜索:' + rule.search_match);
+                if (start < canSearch.length) {
+                    let search_classes = canSearch.slice(start, end);
                     let urls = [];
                     search_classes.forEach(it => {
                         let _url = urljoin(it.type_id, input);
@@ -204,6 +219,7 @@ var rule = {
                         _url = _url.replace("#TruePage#", "" + truePage);
                         urls.push(_url);
                     });
+                    let results_list = [];
                     let results = [];
                     if (typeof(batchFetch) === 'function') {
                         let reqUrls = urls.map(it => {
@@ -215,6 +231,8 @@ var rule = {
                             }
                         });
                         let rets = batchFetch(reqUrls);
+                        let detailUrls = [];
+                        let detailUrlCount = 0;
                         rets.forEach((ret, idx) => {
                             let it = search_classes[idx];
                             if (ret) {
@@ -222,15 +240,65 @@ var rule = {
                                     let json = JSON.parse(ret);
                                     let data = json.list;
                                     data.forEach(i => {
+                                        i.site_name = it.type_name;
                                         i.vod_id = it.type_id + '$' + i.vod_id;
                                         i.vod_remarks = i.vod_remarks + '|' + it.type_name;
                                     });
-                                    results = results.concat(data);
+                                    if (rule.search_match) {
+                                        data = data.filter(item => item.vod_name && (new RegExp(KEY, 'i')).test(item.vod_name))
+                                    }
+                                    if (data.length > 0) {
+                                        if (rule.search_pic && !data[0].vod_pic) {
+                                            log(`当前搜索站点【${it.type_name}】没图片,尝试访问二级去获取图片`);
+                                            let detailUrl = urls[idx].split('wd=')[0] + 'ac=detail&ids=' + data.map(k => k.vod_id.split('$')[1]).join(',');
+                                            detailUrls.push(detailUrl);
+                                            results_list.push({
+                                                data: data,
+                                                has_pic: false,
+                                                detailUrlCount: detailUrlCount
+                                            });
+                                            detailUrlCount++;
+                                        } else {
+                                            results_list.push({
+                                                data: data,
+                                                has_pic: true
+                                            });
+                                        }
+                                    }
                                 } catch (e) {
                                     log(`请求:${it.type_id}发生错误:${e.message}`)
                                 }
                             }
                         });
+                        let reqUrls2 = detailUrls.map(it => {
+                            return {
+                                url: it,
+                                options: {
+                                    timeout: rule.timeout
+                                }
+                            }
+                        });
+                        let rets2 = batchFetch(reqUrls2);
+                        for (let k = 0; k < results_list.length; k++) {
+                            let result_data = results_list[k].data;
+                            if (!results_list[k].has_pic) {
+                                try {
+                                    let detailJson = JSON.parse(rets2[results_list[k].detailUrlCount]);
+                                    log('二级数据列表元素数:' + detailJson.list.length);
+                                    result_data.forEach((d, _seq) => {
+                                        let detailVodPic = detailJson.list.find(vod => vod.vod_id.toString() === d.vod_id.split('$')[1]);
+                                        if (detailVodPic) {
+                                            Object.assign(d, {
+                                                vod_pic: detailVodPic.vod_pic
+                                            });
+                                        }
+                                    });
+                                } catch (e) {
+                                    log(`强制获取网站${result_data[0].site_name}的搜索图片失败:${e.message}`);
+                                }
+                            }
+                            results = results.concat(result_data);
+                        }
                     } else {
                         urls.forEach((_url, idx) => {
                             let it = search_classes[idx];
@@ -242,6 +310,30 @@ var rule = {
                                     i.vod_id = it.type_id + '$' + i.vod_id;
                                     i.vod_remarks = i.vod_remarks + '|' + it.type_name;
                                 });
+                                if (rule.search_match) {
+                                    data = data.filter(item => item.vod_name && (new RegExp(KEY, 'i')).test(item.vod_name))
+                                }
+                                if (data.length > 0) {
+                                    if (rule.search_pic && !data[0].vod_pic) {
+                                        log(`当前搜索站点【${it.type_name}】没图片,尝试访问二级去获取图片`);
+                                        let detailUrl = urls[idx].split('wd=')[0] + 'ac=detail&ids=' + data.map(k => k.vod_id.split('$')[1]).join(',');
+                                        try {
+                                            let detailJson = JSON.parse(request(detailUrl));
+                                            log('二级数据列表元素数:' + detailJson.list.length);
+                                            data.forEach((d, _seq) => {
+                                                let detailVodPic = detailJson.list.find(vod => vod.vod_id.toString() === d.vod_id.split('$')[1]);
+                                                if (detailVodPic) {
+                                                    Object.assign(d, {
+                                                        vod_pic: detailVodPic.vod_pic
+                                                    });
+                                                }
+                                            });
+                                        } catch (e) {
+                                            log(`强制获取网站${it.type_id}的搜索图片失败:${e.message}`);
+                                        }
+                                    }
+                                    results = results.concat(data);
+                                }
                                 results = results.concat(data);
                             } catch (e) {
                                 log(`请求:${it.type_id}发生错误:${e.message}`)
