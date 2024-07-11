@@ -1,5 +1,5 @@
 {
-    "spider": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;fcc4f15b9364f03772301b23033d0812",
+    "spider": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;3843f962622e1fa261e6cd26ebbe2807",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
@@ -20,7 +20,7 @@
                 "type": "rect",
                 "ratio": 1.597
             },
-            "jar": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/danmu.jar;md5;5d503b9413e2f2ab1eb547980b170417"
+            "jar": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/danmu.jar;md5;b601ec16cb783fc8296a2060881083c5"
         },
         {
             "key": "DJ音乐",
@@ -163,7 +163,7 @@
                 "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
                 "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt"
             },
-            "jar": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/danmu.jar;md5;5d503b9413e2f2ab1eb547980b170417"
+            "jar": "https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/danmu.jar;md5;b601ec16cb783fc8296a2060881083c5"
         }
     ],
     "parses": [
@@ -171,6 +171,54 @@
             "name": "聚合",
             "type": 3,
             "url": "Demo"
+        },
+        {
+            "name": "推荐1",
+            "url": "http://jx.li0580.com/home/api?type=ys&uid=2712055&key=ehknxBCFGIKLMUVXZ5&url=",
+            "type": "1",
+            "status": "normal",
+            "type_text": "Type 1",
+            "status_text": "正常"
+        },
+        {
+            "name": "推荐2",
+            "url": "https://ldhz.li0580.com//api/jsonindex.php/?key=7Dtvavu8iDUkd1vRxC&url=",
+            "type": "1",
+            "status": "normal",
+            "type_text": "Type 1",
+            "status_text": "正常"
+        },
+        {
+            "name": "推荐3",
+            "url": "http://110.42.7.182:881/api/?key=c4c3p0YQDnvmdaoVnT&url=",
+            "type": "1",
+            "status": "normal",
+            "type_text": "Type 1",
+            "status_text": "正常"
+        },
+        {
+            "name": "推荐4",
+            "url": "http://122.228.84.103:7777/api/?key=J3RDcpC4cTTSrpyEeD&url=",
+            "type": "1",
+            "status": "normal",
+            "type_text": "Type 1",
+            "status_text": "正常"
+        },
+        {
+            "name": "推荐5",
+            "url": "https://jx.huohua.vip/api/?key=btyg7V3j4YOo8G0xiT&url=",
+            "type": "1",
+            "status": "normal",
+            "type_text": "Type 1",
+            "status_text": "正常"
+        },
+        {
+            "name": "推荐6",
+            "url": "http://110.40.61.123:7777/api/?key=5r77owG0IxkmKBXli9&url=",
+            "type": "1",
+            "status": "normal",
+            "type_text": "Type 1",
+            "status_text": "正常"
         },
         {
             "name": "线路1",
@@ -205,16 +253,6 @@
         {
             "name": "线路4",
             "type": 0,
-            "url": "https://jx.jsonplayer.com/player/?url=",
-            "ext": {
-                "header": {
-                    "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
-                }
-            }
-        },
-        {
-            "name": "线路5",
-            "type": 0,
             "url": "https://jx.aidouer.net/?url=",
             "ext": {
                 "header": {
@@ -224,27 +262,22 @@
             }
         },
         {
-            "name": "线路6",
-            "type": 0,
-            "url": "https://jx.777jiexi.com/player/?url="
-        },
-        {
-            "name": "线路7",
+            "name": "线路5",
             "type": 0,
             "url": "https://www.8090g.cn/?url="
         },
         {
-            "name": "线路8",
+            "name": "线路6",
             "type": 0,
             "url": "https://jx.yangtu.top?url="
         },
         {
-            "name": "线路9",
+            "name": "线路7",
             "type": 0,
             "url": "https://jx.m3u8.tv/jiexi/?url="
         },
         {
-            "name": "线路10",
+            "name": "线路8",
             "type": 0,
             "url": "https://www.ckplayer.vip/jiexi/?url="
         }
