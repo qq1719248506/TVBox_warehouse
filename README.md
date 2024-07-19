@@ -1,8 +1,12 @@
+# 注：即将删除普通云盘资源，只保留弹幕云盘资源，同时普通云盘资源的历史记录也会被删除，云盘登录改为弹窗
+
 # TVBox自用资源
 
 在线源订阅地址：
 
-https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/warehouse.txt
+https://github.moeyy.xyz/raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/warehouse.txt
+
+https://gitdl.cn/raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/warehouse.txt
 
 此资源需软件支持多仓
 
