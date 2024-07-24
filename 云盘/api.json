@@ -1,5 +1,5 @@
 {
-    "spider": "../danmu.jar;md5;924bd95dce1cd389c13fe5e19eedf8ba",
+    "spider": "https://gh.xxooo.cf/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/danmu.jar;md5;3af085d8b574d54e0e8d1717160d8ed7",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
@@ -196,6 +196,22 @@
             }
         },
         {
+            "key": "夸克奥秘弹幕",
+            "name": "弹幕｜奥秘",
+            "type": 3,
+            "api": "csp_Wobg",
+            "quickSearch": 1,
+            "changeable": 1,
+            "filterable": 1,
+            "ext": {
+                "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
+                "site": "https://vip.omii.top",
+                "danmu": true
+            }
+        },
+        {
             "key": "夸克团长弹幕",
             "name": "弹幕｜团长",
             "type": 3,
@@ -299,6 +315,33 @@
             "changeable": 1,
             "ext": {
                 "token": "http://127.0.0.1:9978/file/TVBox/token.txt",
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "danmu": true
+            }
+        },
+        {
+            "key": "米搜弹幕",
+            "name": "弹幕｜米搜",
+            "type": 3,
+            "api": "csp_Qkpanso",
+            "searchable": 1,
+            "filterable": 1,
+            "changeable": 0,
+            "ext": {
+                "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
+                "site": "https://www.misou.fun",
+                "danmu": true
+            }
+        },
+        {
+            "key": "夸搜",
+            "name": "弹幕｜夸搜",
+            "type": 3,
+            "api": "csp_Qkso",
+            "searchable": 1,
+            "filterable": 1,
+            "changeable": 0,
+            "ext": {
                 "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
                 "danmu": true
             }
@@ -420,7 +463,7 @@
         {
             "name": "live",
             "type": 0,
-            "url": "../live.txt",
+            "url": "https://gh.xxooo.cf/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/live.txt",
             "playerType": 1,
             "epg": "http://epg.112114.eu.org/?ch={name}&date={date}"
         }
