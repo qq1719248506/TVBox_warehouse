@@ -1,10 +1,10 @@
 {
-    "spider": "https://github.ednovas.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;4240ee3b8c229184391a6dee8c5d3ad6",
+    "spider": "https://github.ednovas.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/danmu.jar;md5;1c42ad649c8b8acdfb944509d62bda75",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
             "key": "企鹅体育",
-            "name": "企鹅体育",
+            "name": "企鹅｜体育",
             "type": 3,
             "api": "csp_XPath",
             "searchable": 0,
@@ -17,7 +17,7 @@
         },
         {
             "key": "武享吧",
-            "name": "武享吧",
+            "name": "武享吧｜格斗",
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "style": {
@@ -27,7 +27,7 @@
         },
         {
             "key": "88看球",
-            "name": "88看球",
+            "name": "88｜看球",
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "style": {
@@ -37,7 +37,7 @@
         },
         {
             "key": "310直播",
-            "name": "310直播",
+            "name": "310｜直播",
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "style": {
@@ -46,8 +46,18 @@
             "ext": "./JS/310直播.js"
         },
         {
+            "key": "360吧",
+            "name": "360｜直播",
+            "type": 3,
+            "api": "./JS/drpy2.min.js",
+            "style": {
+                "type": "list"
+            },
+            "ext": "./JS/360吧.js"
+        },
+        {
             "key": "JRKAN直播",
-            "name": "JRKAN直播",
+            "name": "JRKAN｜直播",
             "type": 3,
             "api": "./JS/drpy2.min.js",
             "style": {
@@ -56,21 +66,8 @@
             "ext": "./JS/JRKAN直播.js"
         },
         {
-            "key": "一起看直播",
-            "name": "一起看直播",
-            "type": 3,
-            "api": "csp_XYQBiu",
-            "searchable": 0,
-            "quickSearch": 0,
-            "filterable": 0,
-            "style": {
-                "type": "list"
-            },
-            "ext": "./XYQBiu/一起看直播.json"
-        },
-        {
             "key": "push_agent",
-            "name": "推送",
+            "name": "手机｜推送",
             "type": 3,
             "api": "csp_Push",
             "searchable": 0,
@@ -81,8 +78,7 @@
                 "cookie": "http://127.0.0.1:9978/file/TVBox/quark.txt",
                 "uc_cookie": "http://127.0.0.1:9978/file/TVBox/uc.txt",
                 "danmu": true
-            },
-            "jar": "https://github.ednovas.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/danmu.jar;md5;30f9d78ce52e8555126134401b1dd97b"
+            }
         }
     ],
     "doh": [
