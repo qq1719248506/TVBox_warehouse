@@ -1,5 +1,5 @@
 {
-    "spider": "https://github.ednovas.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;4adf1d5aa5fe3706001804de9c74600a",
+    "spider": "https://github.ednovas.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;7de46c7534b68d446aa91e6ecfb267cd",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
@@ -149,146 +149,6 @@
             "name": "聚合",
             "type": 3,
             "url": "Demo"
-        },
-        {
-            "name": "XGJ专线",
-            "url": "http://43.248.100.147:1122/bba/xgjjson.php?url=",
-            "flag": [
-                "BBA"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "XMY专线",
-            "url": "http://121.62.61.51:6888/api/?key=LHypix08ov3mx0Tyd7&url=",
-            "flag": [
-                "NBY"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "LX专线",
-            "url": "http://llyh.xn--yi7aa.top/api/?key=5b317c16d457b31a3150d87c0a362a9e&url=",
-            "flag": [
-                "LXTX"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "OL专线",
-            "url": "http://110.40.39.158:5000/api/jiexi/common?Key=7idBzIqEEFyf4AYYXt&url=",
-            "flag": [
-                "BTOL"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "4K专线",
-            "url": "http://110.42.7.182:881/api/?key=qEDfo9v5Uk48DVmu6W&url=",
-            "flag": [
-                "4kvip"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "MX专线",
-            "url": "http://110.42.7.182:881/api/?key=qEDfo9v5Uk48DVmu6W&url=",
-            "flag": [
-                "m78"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "BD专线",
-            "url": "http://zy.uiovo.com/api/?key=951b4ca48d0f8c77cd8ebbc2e784c441&ud=105&url=",
-            "flag": [
-                "nmys"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "MY专线",
-            "url": "http://zy.uiovo.com/api/?key=951b4ca48d0f8c77cd8ebbc2e784c441&ud=105&url=",
-            "flag": [
-                "mytv"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "XGJ专线",
-            "url": "http://43.248.119.153:9991/jx/?url=",
-            "flag": [
-                "youku",
-                "qq",
-                "qiyi",
-                "bilibili",
-                "mgtv",
-                "pptv",
-                "xigua"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "XGJ聚合",
-            "url": "http://43.248.100.147:1122/XGJ/jxzy.php?url=",
-            "flag": [
-                "youku",
-                "qq",
-                "qiyi",
-                "bilibili",
-                "mgtv",
-                "pptv",
-                "xigua",
-                "NBY",
-                "ETH-",
-                "mytv",
-                "nmys",
-                "BTOL",
-                "4kvip",
-                "m78"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
-        },
-        {
-            "name": "DM专线",
-            "url": "http://zy.uiovo.com/api/?key=951b4ca48d0f8c77cd8ebbc2e784c441&ud=105&url=",
-            "flag": [
-                "yhdm"
-            ],
-            "header": {
-                "User-Agent": "Dalvik/2.1.0"
-            },
-            "type": "1"
         },
         {
             "name": "线路1",
@@ -495,6 +355,12 @@
             "name": "直播3",
             "type": 0,
             "url": "https://tv.iill.top/m3u/Gather",
+            "playerType": 1
+        },
+        {
+            "name": "直播4",
+            "type": 0,
+            "url": "http://mmitv.top/pltv/merization.php?id=list&user=t0k1b5&token=17af41bb&text=diypbox",
             "playerType": 1
         }
     ],
