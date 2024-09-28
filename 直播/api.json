@@ -1,15 +1,16 @@
 {
-    "spider": "https://github.ednovas.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;308dabe9c096459415912ff76cd06ed1",
+    "spider": "https://github.ednovas.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox_warehouse/main/spider.jar;md5;34c7c3e4a322bcb666145dd87fa68e9f",
     "wallpaper": "https://api.likepoems.com/img/bing",
     "sites": [
         {
-            "key": "快手直播",
-            "name": "快手｜直播",
+            "key": "Alllive",
+            "name": "一直播｜首页",
             "type": 3,
-            "api": "csp_KsLive",
+            "api": "csp_Alllive",
+            "playerType": 2,
             "searchable": 0,
             "quickSearch": 0,
-            "filterable": 1
+            "changeable": 0
         },
         {
             "key": "配置中心",
@@ -23,6 +24,15 @@
                 "type": "rect",
                 "ratio": 1.597
             }
+        },
+        {
+            "key": "快手直播",
+            "name": "快手｜直播",
+            "type": 3,
+            "api": "csp_KsLive",
+            "searchable": 0,
+            "quickSearch": 0,
+            "filterable": 1
         },
         {
             "key": "斗鱼直播",
